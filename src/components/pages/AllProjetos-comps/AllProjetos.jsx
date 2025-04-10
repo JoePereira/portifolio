@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import easyshop from '/images/projectsImages/easyshop.webp'
@@ -14,103 +14,104 @@ import tictactoe from '/images/projectsImages/tictactoe.webp'
 import soccerquotes from '/images/projectsImages/soccerquotes.webp'
 import fortunecookies from '/images/projectsImages/fortunecookies.webp'
 import todomachine from '/images/projectsImages/todomachine.webp'
+import ProjectCard from '../../ProjectCard'
+import { ModalInfo } from '../../ModalInfo'
 
 const AllProjetos = () => {
 
     const projects = [
         {
-            id: 1,
-            src: easyshop,
-            // demo: 'https://easyshop-bydt.netlify.app/',
-            // code: 'https://github.com/JoePereira/EasyShop'
+          id: 1,
+          title: "EasyShop",
+          description: "Ecommerce criado com React JS e Tailwind CSS",
+          Tecnologias: "Javascript, React, Redux, Tailwind CSS",
+          src: "/images/projectsImages/easyshop.webp",
+          // demo: "https://easyshop-bydt.netlify.app/",
+          // code: "https://github.com/JoePereira/EasyShop",
         },
         {
-            id: 2,
-            src: acciovocabulary,
-            // demo: 'https://diegotellezc.github.io/landing-accio-vocabulary/',
-            // code: 'https://github.com/JoePereira/landing-accio-vocabulary'
+          id: 2,
+          title: "Accio Vocabulary",
+          description:
+            "Landing page de um canal do Youtube onde é ensinado inglês com filmes, series e musicas.",
+          Tecnologias: "Javascript, HTML5, Tailwind CSS",
+          src: "/images/projectsImages/acciovocabulary.webp",
+          // demo: "https://diegotellezc.github.io/landing-accio-vocabulary/",
+          // code: "https://github.com/JoePereira/landing-accio-vocabulary",
         },
         {
-            id: 3,
-            src: dogsblog,
-            // demo: 'https://dogs-blog-diegotellezdev.netlify.app/',
-            // code: 'https://github.com/JoePereira/dogsBlog'
+          id: 3,
+          title: "Dogs Blog",
+          description:
+            "DogsBlog é uma página para quem ama cachorros onde você pode encontrar alguns artigos para cuidar cada vez mais dos seus animais.",
+          Tecnologias: "Javascript, HTML5, CSS3",
+          src: "/images/projectsImages/dogsblog.webp",
+          // demo: "https://dogs-blog-diegotellezdev.netlify.app/",
+          // code: "https://github.com/JoePereira/dogsBlog",
         },
         {
-            id: 4,
-            src: academloshop,
-            // demo: 'https://academlostoregen24.netlify.app/',
-            // code: 'https://github.com/JoePereira/academloShop'
+          id: 4,
+          title: "Academlo Shop",
+          description:
+            "Academlo Shop é um E-Commerce desenvolvido com Vanilla Javascript. Criei um slider com banner ads e voce pode alterar entre o modo escuro e claro.",
+          Tecnologias: "Javascript, HTML5, CSS3",
+          src: "/images/projectsImages/academloshop.webp",
+          // demo: "https://academlostoregen24.netlify.app/",
+          // code: "https://github.com/JoePereira/academloShop",
         },
         {
-            id: 5,
-            src: weatherapp,
-            // demo: 'https://weatherappbydt.netlify.app/',
-            // code: 'https://github.com/JoePereira/weather-app'
+          id: 5,
+          title: "Weather App",
+          description:
+            "Uma aplicação para você saber o clima na sua localizacao atual em graus Celsius ou graus Fahrenheit. Você também pode pesquisar o clima ao redor do mundo.",
+          Tecnologias: "Javascript, React, Tailwind CSS",
+          src: "/images/projectsImages/weatherapp.webp",
+          // demo: "https://weatherappbydt.netlify.app/",
+          // code: "https://github.com/JoePereira/weather-app",
         },
         {
-            
-            id: 6,
-            src: rickandmorty,
-            // demo: 'https://rickandmorty-bydt.netlify.app/',
-            // code: 'https://github.com/JoePereira/RickAndMortyApp'
+          id: 6,
+          title: "Rick and Morty",
+          description:
+            "Um app para você procurar Rick e Morty.",
+          Tecnologias: "Javascript, React, Tailwind CSS",
+          src: "/images/projectsImages/rickandmorty.webp",
+          // demo: "https://rickandmorty-bydt.netlify.app/",
+          // code: "https://github.com/JoePereira/RickAndMortyApp",
         },
         {
             id: 7,
-            src: todomachine,
-            // demo: 'https://diegotellezc.github.io/toDoMachine/',
-            // code: 'https://github.com/JoePereira/toDoMachine'
+            title: "Petshop",
+            description:
+            "Site de uma petshop para venda de servicos e produtos.",
+            Tecnologias: "Typescript, Next.js, Tailwind CSS, Shadcn",
+            src: "/images/projectsImages/petshop.webp",
+            // demo: "https://rickandmorty-bydt.netlify.app/",
+            // code: "https://github.com/JoePereira/RickAndMortyApp",
         },
         {
             id: 8,
-            src: crud,
-            // demo: 'https://users-crud-bydt.netlify.app/',
-            // code: 'https://github.com/JoePereira/Users-CRUD'
+            title: "Dashboard",
+            description:
+            "Painel Dashboard com atualizacao em tempo real para dados de vendas, pedidos e novos clientes.",
+            Tecnologias: "Typescript, Next.js, Tailwind CSS, Shadcn",
+            src: "/images/projectsImages/dashboard.webp",
+            // demo: "https://rickandmorty-bydt.netlify.app/",
+            // code: "https://github.com/JoePereira/RickAndMortyApp",
         },
-        {
-            id: 9,
-            src: moviepedia,
-            // demo: 'https://diegotellezc.github.io/Moviepedia/',
-            // code: 'https://github.com/JoePereira/Moviepedia'
-        },
-        {
-            id: 10,
-            src: pokedex,
-            // demo: 'https://pokedex-bydt.netlify.app/',
-            // code: 'https://github.com/JoePereira/pokedex'
-        },
-        {
-            id: 11,
-            src: tictactoe,
-            // demo: 'https://tictactoebydt.netlify.app/',
-            // code: 'https://github.com/JoePereira/Tictactoebydt'
-        },
-        {
-            id: 12,
-            src: fortunecookies,
-            // demo: 'https://fortunecookiesapp.netlify.app/',
-            // code: 'https://github.com/JoePereira/fortuneCookies'
-        },
-        {
-            id: 13,
-            src: soccerquotes,
-            // demo: 'https://soccerquotes.netlify.app/',
-            // code: 'https://github.com/JoePereira/soccerQuotes'
-        },
-    ]
+        ];
 
-    const handleClickDemo = (demoUrl) => {
-        const newWindow = window.open(demoUrl, '_blank');
-        newWindow.opener = null;
-        newWindow.rel = 'noopener noreferrer';
-    }
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [SelectedProject, setSelectedProject] = useState({});
 
-    const handleClickCode = (codeUrl) => {
-        const newWindow = window.open(codeUrl, '_blank');
-        newWindow.opener = null;
-        newWindow.rel = 'noopener noreferrer';
-    }
-    
+    const handleModalInfo = (project) => {
+        setModalIsOpen(true);
+        setSelectedProject(project);
+    };
+
+    const closeModal = () => {
+        setModalIsOpen(false);
+    };
 
     return (
         <section name="Projetos" className='relative w-full text-white md:min-h-screen mt-24 mb-10'>
@@ -122,6 +123,16 @@ const AllProjetos = () => {
                 </div>
 
                 <div  className='grid sm:grid-cols-2 md:grid-cols-3 gap-8'>
+                {projects.map((project) => (
+                    <ProjectCard
+                    key={project.id}
+                    project={project}
+                    setSelectedProject={setSelectedProject}
+                    handleModalInfo={handleModalInfo}
+                    />
+                ))}
+                </div>
+                {/* <div  className='grid sm:grid-cols-2 md:grid-cols-3 gap-8'>
                     {
                         projects.map(({ id, src, demo, code }) => (
                                 <div key={id} className='shadow-md shadow-gray-600 rounded-lg max-w-md mx-auto'>
@@ -133,7 +144,7 @@ const AllProjetos = () => {
                                 </div>
                         ))
                     }
-                </div>
+                </div> */}
             </div>
 
             <div className='flex justify-center'>
@@ -142,6 +153,10 @@ const AllProjetos = () => {
                     Retornar
                 </Link>
             </div>
+
+            {modalIsOpen && (
+                <ModalInfo SelectedProject={SelectedProject} closeModal={closeModal} />
+            )}
         </section>
     )
 }

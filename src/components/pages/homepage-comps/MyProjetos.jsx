@@ -42,7 +42,17 @@ const MyProjetos = () => {
             />
           ))}
         </div>
+        <div className="flex justify-end mr-4">
+            <Link
+              to="projects"
+              className="hover:underline hover:underline-offset-4 hover:text-primary-color/60 cursor-pointer text-gray-300 flex items-center"
+            >
+              Veja mais projetos...
+              <MdOutlineKeyboardArrowRight size={20} />
+            </Link>
+        </div>
       </div>
+
 
       <ScrollLink
         to="Tecnologias"

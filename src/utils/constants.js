@@ -57,7 +57,7 @@ const projects = [
     src: "/images/projectsImages/rickandmorty.webp",
     // demo: "https://rickandmorty-bydt.netlify.app/",
     // code: "https://github.com/JoePereira/RickAndMortyApp",
-  },
-];
+  }
+  ];
 
 export default projects;

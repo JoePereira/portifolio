@@ -56,7 +56,7 @@ const CertificateSlider = ({ certificates }) => {
             <div className='max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full'>
 
                 <div className='mb-2'>
-                    <h2 className='text-4xl font-bold inline border-b-4 border-primary-color/40 sm:text-5xl pb-1'>Educalção</h2>
+                    <h2 className='text-4xl font-bold inline border-b-4 border-primary-color/40 sm:text-5xl pb-1'>Educação</h2>
                     <p className='py-6'>Veja meus certificados</p>
                 </div>
 
